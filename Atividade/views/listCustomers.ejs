@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>Customer List</title>
+</head>
+<body>
+  <h1>Customer List</h1>
+  <a href="/customers/add">Add Customer</a>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(customer => { %>
+        <tr>
+          <td><%= customer.name %></td>
+          <td><%= customer.email %></td>
+          <td><%= customer.phone %></td>
+          <td>
+            <a href="/customers/edit/<%= customer.id %>">Edit</a>
+            <a href="/customers/delete/<%= customer.id %>">Delete</a>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>
